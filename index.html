@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Better Find and Replace</title>
+
+  <link rel="shortcut icon" href="./003-folder.ico" type="image/x-icon">
+
+  <meta content="Better Find and Replace" property="og:title" />
+  <meta content="A tool to make it easy to create and save the text transfroms you do every day" property="og:description" />
+  <meta content="https://flaringk.github.io/betterfindreplace" property="og:url" />
+  <meta content="#fcd66d" data-react-helmet="true" name="theme-color" />
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  
+  <div id="main">
+
+    <div id="workspace">
+
+      <div id="leftSection">
+
+        <div class="aol" name="New Replacement">
+          <div id="new">
+
+            <div class="buttons">
+              <div id="liveUpdate" class="on" onclick="toggleLiveUpdate(this)">Live Update</div>
+              <div onclick="addModifier()">Add Modifier</div> 
+              <div onclick="openDialog('saveDialog')">Save replacement</div> 
+              <div onclick="clearModifiers()">Clear Modifiers</div>
+            </div>
+  
+            <hr>
+
+            <div id="modifiers">
+              <div class="mod section">
+                Modifier <br>
+
+                <label for="find" class="lLabel">Find:</label>
+                <textarea rows="1" cols="25" name="find" id="find" onchange="updateCurrentReplacement()" onkeyup="updateCurrentReplacement()"> </textarea>
+
+                <input type="checkbox" name="regex" id="regex" onchange="updateCurrentReplacement()">
+                <label for="regex">Use Regex</label> <br>
+
+                <label for="replace" class="lLabel">Replace:</label>
+                <textarea rows="1" cols="25"  name="replace" id="replace" onchange="updateCurrentReplacement()" onkeyup="updateCurrentReplacement()"></textarea>
+
+                <div class="modActions">
+                  <div onclick="removeModifier(this)">×</div>
+                  <div class="up" onclick="moveModUp(this)">▲</div>
+                  <div class="down" onclick="moveModDown(this)">▼</div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="aol" name="Saved Replacements">
+          <div>
+            <div class="buttons">
+              <div onclick="openDialog('importDialog')">Import Replacement</div> 
+              <div onclick="openDialog('clearDialog')">Clear All Replacements (!)</div>
+            </div>
+
+            <hr>
+
+            <div id="saves">
+              <div class="savedReplacement section">
+                "<span>Remove All Spaces before Line breaks</span>"
+                <div class="buttons">
+                  <div onclick="loadReplacement(this)">Load</div>
+                  <div onclick="exportReplacement(this)">Export</div>
+                  <div onclick="deleteReplacement(this)">Delete</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div id="textspace" class="aol" name="Text Space">
+        <div id="Textspace">
+
+          <div class="buttons">
+            <div onclick="copyOutput()">Copy Output</div>
+            <div onclick="inputToOutput()">Use Output as Input</div>
+          </div>
+
+          <hr>
+
+          Input
+          <textarea name="input" id="input" onchange="replaceText()" onkeyup="replaceText()">This is just a simple test to see if this actually works</textarea>
+          Output
+          <textarea name="output" id="output"></textarea>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./betterReplace.js"></script>
+
+  <dialog id="saveDialog" class="aol" name="Save new replacement">
+    <div>
+      <b>Name the new replacement</b>
+      <div class="section">
+        <label for="save">Replacement Name:</label>
+        <input type="text" name="save" id="save"> 
+      </div>
+
+      <div class="dialogButtons">
+        <div onclick="closeDialog('saveDialog')">Cancel</div>
+        <div onclick="saveNewReplacement()">Save</div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="clearDialog" class="aol" name="Warning">
+    <div>
+      <b><center>Are you sure you want to clear all replacements?</center></b>
+      <div class="dialogButtons">
+        <div onclick="closeDialog('clearDialog')">Cancel</div>
+        <div onclick="clearAllSaves()">Clear All</div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="exportDialog" class="aol" name="Warning">
+    <div>
+      <b>Copy Exported Replacement</b>
+      <div class="section">
+        <textarea cols="30" rows="10"></textarea>
+      </div>
+      <div class="dialogButtons">
+        <div onclick="closeDialog('exportDialog')">Close</div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="importDialog" class="aol" name="Warning">
+    <div>
+      <b>Paste Exported Replacement</b>
+      <div class="section">
+        <textarea cols="30" rows="10"></textarea>
+      </div>
+      <div class="dialogButtons">
+        <div onclick="closeDialog('importDialog')">Cancel</div>
+        <div onclick="importReplacement()">Import</div>
+      </div>
+    </div>
+  </dialog>
+
+</body>
+</html>

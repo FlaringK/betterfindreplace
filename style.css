@@ -1,0 +1,190 @@
+body {
+  background-image: url(./bg.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 99vh;
+}
+
+#workspace {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#leftSection {
+  min-height: 90vh;
+}
+
+#main {
+  margin: auto;
+}
+
+/* AOL */
+.aol {
+	--app: "Instant Messenger";
+	text-align: left;
+	
+  padding: 4px;
+  padding-top: 0;
+  line-height: 30px;
+  border-radius: 5px 5px 1px 1px;
+  box-shadow: inset 0 0 20px #001acf, inset 0 9999px #0058e6;
+  color: white;
+  border: solid #014cd0 1px;
+  border-top-color: #0058eb;
+
+  position: relative;
+  overflow: hidden;
+
+  font-family: Tahoma;
+  font-size: 12.5px;
+  font-weight: bold;
+  min-width: 400px;
+}
+#main .aol { margin: 1em; }
+.aol::before {
+  content: attr(name);
+  text-indent: 4px;
+  display: block;
+  /* background: url(https://file.garden/X1htvgJ0DEp_tp-Z/MSPFA%20other/xp/Xpincons.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 2px) 50%; */
+}
+.aol::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  left: 0;
+  top: -10px;
+  box-shadow: 0 0px 16px white;
+}
+
+.aol > div {
+  color: black;
+  box-shadow: 
+    -2px 0px 2px 0px #fff5, 
+    /* 0px -32px 4px #0144d0, */
+    /* 0px -38px 12px -2px #fff9; */;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5em;
+
+  background-color: #ECE9D7;
+  padding: 0 6px 2px;
+	
+	position: relative;
+}
+
+.aol textarea, .aol input[type="text"] {
+  border-top: grey solid 2px;
+  border-left: grey solid 2px;
+}
+
+.aol input[type="text"] {
+  font-family: monospace;
+}
+
+.aol #Textspace textarea {
+  display: block;
+  resize: none;
+  width: 550px;
+  height: 250px;
+}
+
+.aol .lLabel {
+  display: inline-block;
+  width: 5em;
+}
+
+.aol hr {
+  border-top: solid #c9c6b6 1px;
+  margin: 0 -6px 8px;
+}
+
+.aol .section {
+  border: solid #c9c6b6 1px;
+  background-color: #ECE9D7;
+  margin: 6px 0;
+}
+
+.aol .buttons { display: flex; }
+.aol > div > .buttons { margin: 0 -6px; }
+.aol .buttons > div {
+  display: block;
+  border-right: solid #c9c6b6 1px;
+  padding: 0.1em 0.5em;
+  flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+}
+.aol .buttons > div:hover { background-color: #b9b6a8; }
+.aol .buttons > div.on { background-color: #b9b6a8; }
+.aol .buttons > div:active { background-color: #858379; }
+.aol .buttons > div.on:active { background-color: #858379; }
+.aol .buttons > div:last-child {
+  border-right: none;
+}
+
+.aol .mod {
+  padding: 0.1em 0.5em;
+  position: relative;
+}
+
+.aol .mod .modActions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1em;
+  line-height: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+.aol .mod:first-child .modActions .up { display: none; } 
+.aol .mod:last-child .modActions .down { display: none; } 
+
+.aol .savedReplacement {
+  text-align: center;
+}
+
+.aol #modifiers {
+  min-height: 60px;
+  position: relative;
+}
+
+.aol #modifiers::before {
+  content: "No Modifiers";
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: calc(30px - 0.5em);
+  line-height: 1em;
+}
+
+.aol .dialogButtons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.aol .dialogButtons > div {
+  cursor: pointer;
+  background-color: #f7f3ef;
+  margin: 0.1em;
+  padding: 0.1em 2em;
+  border: solid #023b75 1px;
+  border-radius: 0.25em;
+  box-shadow: 0 -0.2em 0.2em 0 #d6cec6 inset;
+}
+.aol .dialogButtons > div:hover { outline: solid #6982ed; }
+.aol .dialogButtons > div:active { outline: solid #6982ed; background-color: #d6cec6; }
+
+dialog .section {
+  padding: 1em;
+  text-align: center;
+}
