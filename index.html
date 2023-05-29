@@ -83,20 +83,22 @@
 
       </div>
 
-      <div id="textspace" class="aol" name="Text Space">
-        <div id="Textspace">
-
-          <div class="buttons">
-            <div onclick="copyOutput()">Copy Output</div>
-            <div onclick="inputToOutput()">Use Output as Input</div>
+      <div id="rightSection">
+        <div id="textspace" class="aol" name="Text Space">
+          <div id="Textspace">
+  
+            <div class="buttons">
+              <div onclick="copyOutput()">Copy Output</div>
+              <div onclick="inputToOutput()">Use Output as Input</div>
+            </div>
+  
+            <hr>
+  
+            Input
+            <textarea name="input" id="input" onchange="replaceText()" onkeyup="replaceText()">This is just a simple test to see if this actually works</textarea>
+            Output
+            <textarea name="output" id="output"></textarea>
           </div>
-
-          <hr>
-
-          Input
-          <textarea name="input" id="input" onchange="replaceText()" onkeyup="replaceText()">This is just a simple test to see if this actually works</textarea>
-          Output
-          <textarea name="output" id="output"></textarea>
         </div>
       </div>
 

@@ -9,13 +9,14 @@ body {
 #workspace {
   display: flex;
   justify-content: center;
-  gap: 1em;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
+  min-height: 90vh;
 }
 
-#leftSection {
-  min-height: 90vh;
+#rightSection {
+  display: flex;
+  align-items: center;
 }
 
 #main {
